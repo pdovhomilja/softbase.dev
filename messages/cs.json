@@ -1,0 +1,84 @@
+{
+  "Metadata": {
+    "title": "Jsme Softbase",
+    "description": "Děláme software tak jak nikdo jinej"
+  },
+  "NotFoundPage": {
+    "title": "Stránka nenalezena",
+    "message": "Omlouváme se, ale stránka, kterou hledáte neexistuje.",
+    "description": "Omlouváme se, ale stránka, kterou hledáte neexistuje."
+  },
+  "Navigation": {
+    "home": "Domů",
+    "about": "O nás",
+    "product": "Produkty",
+    "service": "Služby",
+    "contact": "Kontakt"
+  },
+  "LocaleSwitcher": {
+    "label": "Change language",
+    "locale": "{locale, select, cs {Czech} en {English} other {Unknown}}"
+  },
+  "Homepage": {
+    "title": "děláme software tak jak nikdo jinej.",
+    "button": "Více o nás"
+  },
+  "About": {
+    "title": "O nás",
+    "weAre": "Jsme Softbase, děláme vývoj software snadným.",
+    "weDo": "Naše dovednosti",
+    "weDoMessage": "Jsme tým zkušených vývojářů, kteří se již mnoho let věnují vývoji softwaru. Máme zkušenosti s mnoha technologiemi a nebojíme se učit nové věci.",
+    "ourExperience": "Naše zkušenosti",
+    "ourExperienceMessage": "Naše zkušenosti sahají od vývoje mobilních aplikací, přes vývoj webových aplikací až po vývoj backendu. Máme zkušenosti s mnoha technologiemi a nebojíme se učit nové věci.",
+    "ourValues": "Naše hodnoty",
+    "ourValuesMessage": "Jsme tým zkušených vývojářů, kteří se již mnoho let věnují vývoji softwaru. Máme zkušenosti s mnoha technologiemi a nebojíme se učit nové věci.",
+    "ourTechStack": "Naše technologický stack",
+    "ourTechStackMessage": "Jsme tým zkušených vývojářů, kteří se již mnoho let věnují vývoji softwaru. Máme zkušenosti s mnoha technologiemi a nebojíme se učit nové věci.",
+    "hiring": "Nabíráme nové kolegy",
+    "hiringMessage": "Hledáme nové kolegy. Pokud máte zájem pracovat s námi, kontaktujte nás. Jste pro nás ideální, pokud jste týmový hráč, nebojíte se nových výzev a nebojíte se učit nové věci. Hledáme lidi, kteří se nebojí převzít odpovědnost a nebojí se rozhodovat.",
+    "perfectFit": "Ideální kandidát?",
+    "perfectFitMessage": "Pokud máte zájem pracovat s námi, kontaktujte nás. Jste pro nás ideální, pokud jste týmový hráč, nebojíte se nových výzev a nebojíte se učit nové věci. Hledáme lidi, kteří se nebojí převzít odpovědnost a nebojí se rozhodovat.",
+    "contactButton": "Kontaktujte nás"
+  },
+  "Service": {
+    "title": "Naše služby"
+  },
+  "Product": {
+    "title": "Naše produkty"
+  },
+  "Contact": {
+    "title": "Kontaktujte nás",
+    "message": "Pošlete nám zprávu, pojďme se pobavit o vašem projektu.",
+    "contactTitle": "Kontaktní informace",
+    "contactForm": {
+      "formTitle": "Pošlete nám zprávu",
+      "name": "Jméno",
+      "email": "Email",
+      "phone": "Telefon",
+      "message": "Zpráva",
+      "messagePlaceholder": "Vaše zpráva",
+      "buttonLabel": "Odeslat zprávu",
+      "termsCheckboxLabel": "Souhlasím se zpracováním osobních údajů",
+      "newsletterCheckboxLabel": "Chci dostávat novinky od Softbase"
+    },
+    "contactMeeting": {
+      "title": "Setkání s námi",
+      "description": "Těšíme se na osobní setkání nebo online schůzku.",
+      "buttonLabel": "Naplánovat schůzku"
+    }
+  },
+  "PageLayout": {
+    "links": {
+      "docs": {
+        "title": "Docs",
+        "description": "Learn more about next-intl in the official docs.",
+        "href": "https://next-intl-docs.vercel.app/"
+      },
+      "source": {
+        "title": "Source code",
+        "description": "Browse the source code of this example on GitHub.",
+        "href": "https://github.com/amannn/next-intl/tree/main/examples/example-app-router"
+      }
+    }
+  }
+}

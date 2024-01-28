@@ -1,0 +1,85 @@
+{
+  "Metadata": {
+    "title": "We are Softbase",
+    "description": "We are Softbase, we are making software development easy."
+  },
+  "NotFoundPage": {
+    "title": "Stránka nenalezena",
+    "message": "Omlouváme se, ale stránka, kterou hledáte neexistuje.",
+    "description": "Omlouváme se, ale stránka, kterou hledáte neexistuje."
+  },
+  "Navigation": {
+    "home": "Home",
+    "about": "About",
+    "product": "Products",
+    "service": "Services",
+    "contact": "Contact"
+  },
+  "LocaleSwitcher": {
+    "label": "Change language",
+    "locale": "{locale, select, cs { Czech} en { English} other {Unknown}}"
+  },
+  "Homepage": {
+    "title": " we are making software development easy.",
+    "button": "Learn more about us"
+  },
+  "About": {
+    "title": "About us",
+    "weAre": "We are Softbase, we are making software development easy.",
+    "weDo": "Our skill",
+    "weDoMessage": "We are a team of experienced developers who have been working in the field of software development for many years. We have experience with many technologies and we are not afraid to learn new things.",
+    "ourExperience": "Our experience",
+    "ourExperienceMessage": "NA",
+    "ourValues": "Our values",
+    "ourValuesMessage": "We are a team of experienced developers who have been working in the field of software development for many years. We have experience with many technologies and we are not afraid to learn new things.",
+    "ourTechStack": "Our tech stack",
+    "ourTechStackMessage": "We are a team of experienced developers who have been working in the field of software development for many years. We have experience with many technologies and we are not afraid to learn new things.",
+    "hiring": "We are hiring",
+    "hiringMessage": "We are looking for new colleagues. If you are interested in working with us, please contact us. You are a perfect fit for us if you are a team player, you are not afraid of new challenges and you are not afraid to learn new things. We are looking for people who are not afraid to take responsibility and are not afraid to make decisions. We are looking for people who are not afraid to take responsibility and are not afraid to make decisions. We are looking for people who are not afraid to take responsibility and are not afraid to make decisions. We are looking for people who are not afraid to take responsibility and are not afraid to make decisions. We are looking for people who are not afraid to take responsibility and are not afraid to make decisions. We are looking for people who are not afraid to take responsibility and are not afraid to make decisions. We are looking for people who are not afraid to take responsibility and are not afraid to make decisions. We are looking for people who are not afraid to take responsibility and are not afraid to make decisions.",
+    "perfectFit": "Perfect fit?",
+    "perfectFitMessage": "If you are interested in working with us, please contact us.",
+    "contactButton": "Contact us"
+  },
+  "Service": {
+    "title": "Our services"
+  },
+  "Product": {
+    "title": "Our products"
+  },
+  "Contact": {
+    "title": "Contact us",
+    "message": "Send us a message, let's talk about your project.",
+    "formTitle": "Send us a message",
+    "contactTitle": "Contact information",
+    "contactForm": {
+      "formTitle": "Send us a message",
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "message": "Message",
+      "messagePlaceholder": "Your message",
+      "buttonLabel": "Send message",
+      "termsCheckboxLabel": "I agree to the terms and conditions",
+      "newsletterCheckboxLabel": "I want to receive a newsletter from Softbase"
+    },
+    "contactMeeting": {
+      "title": "Meeting with us",
+      "description": "We are looking forward to see you in person or meet us online.",
+      "buttonLabel": "Schedule a meeting"
+    }
+  },
+  "PageLayout": {
+    "links": {
+      "docs": {
+        "title": "Docs",
+        "description": "Learn more about next-intl in the official docs.",
+        "href": "https://next-intl-docs.vercel.app/"
+      },
+      "source": {
+        "title": "Source code",
+        "description": "Browse the source code of this example on GitHub.",
+        "href": "https://github.com/amannn/next-intl/tree/main/examples/example-app-router"
+      }
+    }
+  }
+}
