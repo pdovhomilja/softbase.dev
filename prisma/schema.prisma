@@ -21,6 +21,11 @@ model visitors {
   city      String?
   latitude  Float?
   longitude Float?
+  timezone  String?
+  country_code String?
+  postal String?
+  continent String?
+  is_eu Boolean?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }

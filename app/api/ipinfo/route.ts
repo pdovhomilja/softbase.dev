@@ -17,6 +17,7 @@ export async function GET(request: Request) {
   const ip2 = '145.224.105.165'
 
   const ipinfoResult = await ipinfoWrapper.lookupIp(ip2)
+  //console.log(ipinfoResult, 'ipinfoResult')
 
   try {
     const visitor = await prisma.visitors.findUnique({
@@ -47,7 +48,15 @@ export async function GET(request: Request) {
         data: {
           ip: ip2,
           hostname: ipinfoResult.hostname,
-          org: ipinfoResult.org
+          city: ipinfoResult.city,
+          region: ipinfoResult.region,
+          country: ipinfoResult.country,
+          org: ipinfoResult.org,
+          postal: ipinfoResult.postal,
+          timezone: ipinfoResult.timezone,
+          country_code: ipinfoResult.countryCode,
+          continent: ipinfoResult.continent.name,
+          is_eu: ipinfoResult.isEU
         }
       })
       return NextResponse.json(

@@ -3,6 +3,7 @@ import { LogoHomePage } from './(marketing)/_components/logo'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import { unstable_setRequestLocale } from 'next-intl/server'
+import SessionInfo from '@/components/session-info'
 
 export default function Home({
   params: { locale }
@@ -16,6 +17,7 @@ export default function Home({
 
   return (
     <main className='flex h-full flex-col items-center justify-center '>
+      <SessionInfo />
       <div className='my-10 h-[300px] w-full'>
         <LogoHomePage />
       </div>
