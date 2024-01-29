@@ -67,6 +67,11 @@
       "buttonLabel": "Naplánovat schůzku"
     }
   },
+  "ThankYouPage": {
+    "title": "Děkujeme za vaši zprávu",
+    "description": "Budeme Vás kontaktovat zpět jak jen to půjde.",
+    "message": "Mezitím se můžete podívat na naše sociální sítě:"
+  },
   "PageLayout": {
     "links": {
       "docs": {

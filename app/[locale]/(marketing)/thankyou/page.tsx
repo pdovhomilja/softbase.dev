@@ -1,24 +1,50 @@
+import { useTranslations } from 'next-intl'
+import { unstable_setRequestLocale } from 'next-intl/server'
 import Link from 'next/link'
 import React from 'react'
-import { FaSquareXTwitter } from 'react-icons/fa6'
+import {
+  FaSquareXTwitter,
+  FaReddit,
+  FaDiscord,
+  FaGithub
+} from 'react-icons/fa6'
 
-const ThankYouPage = () => {
+const ThankYouPage = ({
+  params: { locale }
+}: {
+  params: { locale: string }
+}) => {
+  unstable_setRequestLocale(locale)
+  const t = useTranslations('ThankYouPage')
   return (
     <div className='flex h-full w-full flex-col items-center justify-center space-y-10'>
       <h1 className='scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl'>
-        Thank your for your message.
+        {t('title')}
       </h1>
       <h2 className='scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0'>
-        We will get back to you as soon as possible.
+        {t('description')}
       </h2>
-      <p className='text-xl text-muted-foreground'>
-        In the meantime, you can check out our socials:
-      </p>
+      <p className='text-xl text-muted-foreground'>{t('message')}</p>
       <div className='flex flex-wrap gap-2'>
         <SocialMediaLink
           IconComponent={FaSquareXTwitter}
           text='@NextCRMapp'
           href={'https://twitter.com/NextCRMapp'}
+        />
+        <SocialMediaLink
+          IconComponent={FaReddit}
+          text='/r/NextCRM'
+          href={'https://reddit.com/r/NextCRM'}
+        />
+        <SocialMediaLink
+          IconComponent={FaDiscord}
+          text='NextCRM Discord'
+          href={'https://discord.gg/Dd4Aj6S4Dz'}
+        />
+        <SocialMediaLink
+          IconComponent={FaGithub}
+          text='NextCRM Github'
+          href={'https://github.com/pdovhomilja/nextcrm-app'}
         />
       </div>
     </div>

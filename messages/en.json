@@ -44,7 +44,9 @@
     "title": "Our services"
   },
   "Product": {
-    "title": "Our products"
+    "title": "Our products",
+    "description": "We are a team of experienced developers who have been working in the field of software development for many years. We have experience with many technologies and we are not afraid to learn new things.",
+    "detailButton": "Detail"
   },
   "Contact": {
     "title": "Contact us",
@@ -67,6 +69,11 @@
       "description": "We are looking forward to see you in person or meet us online.",
       "buttonLabel": "Schedule a meeting"
     }
+  },
+  "ThankYouPage": {
+    "title": "Thank you for your message",
+    "description": "We will contact you as soon as possible.",
+    "message": "In the meantime, you can check out our socials:"
   },
   "PageLayout": {
     "links": {
