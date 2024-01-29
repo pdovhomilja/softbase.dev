@@ -12,12 +12,10 @@ export async function GET(request: Request) {
     headers[key] = value
   })
 
-  const ip2 = request.headers.get('x-forwarded-for') as string
+  //const ip2 = request.headers.get('x-forwarded-for') as string
+  const ip2 = '145.224.105.165'
 
-  const ipinfoResult = ipinfoWrapper.lookupIp(ip2).then((response: IPinfo) => {
-    //console.log(response, 'IP Response')
-    return response
-  })
+  const ipinfoResult = await ipinfoWrapper.lookupIp(ip2)
 
   /*  ipinfoWrapper.lookupASN('AS7922').then((response: AsnResponse) => {
     console.log(response) 
@@ -25,6 +23,8 @@ export async function GET(request: Request) {
 */
   return NextResponse.json({
     ip2: ip2,
-    ipinfoResult: ipinfoResult
+    hostname: ipinfoResult.hostname,
+    org: ipinfoResult.org
+    //ipinfoResult: ipinfoResult
   })
 }
