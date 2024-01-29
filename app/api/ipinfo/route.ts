@@ -12,30 +12,19 @@ export async function GET(request: Request) {
     headers[key] = value
   })
 
-  const ip = request.headers.get('cf-connecting-ip') as string
   const ip2 = request.headers.get('x-forwarded-for') as string
-  const ipFromHeader = request.headers.get('x-forwarded-for') as string
 
-  console.log(headers, 'HEADERS')
-  console.log(ip, 'IP')
-  console.log(ip2, 'IP2')
-  console.log(ipFromHeader, 'IP From Header')
-
-  const ipinfoResult = ipinfoWrapper
-    .lookupIp('145.224.105.165')
-    .then((response: IPinfo) => {
-      console.log(response, 'IP Response')
-      return response
-    })
+  const ipinfoResult = ipinfoWrapper.lookupIp(ip2).then((response: IPinfo) => {
+    //console.log(response, 'IP Response')
+    return response
+  })
 
   /*  ipinfoWrapper.lookupASN('AS7922').then((response: AsnResponse) => {
     console.log(response) 
   })
 */
   return NextResponse.json({
-    ip: ip,
     ip2: ip2,
-    ipFromHeader: ipFromHeader,
-    ipinfoResult
+    ipinfoResult: ipinfoResult
   })
 }
