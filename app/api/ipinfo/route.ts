@@ -1,3 +1,4 @@
+import { prisma } from '@/lib/prisma'
 import { NextResponse } from 'next/server'
 import IPinfoWrapper, { IPinfo, AsnResponse } from 'node-ipinfo'
 
@@ -17,14 +18,49 @@ export async function GET(request: Request) {
 
   const ipinfoResult = await ipinfoWrapper.lookupIp(ip2)
 
-  /*  ipinfoWrapper.lookupASN('AS7922').then((response: AsnResponse) => {
-    console.log(response) 
-  })
-*/
-  return NextResponse.json({
-    ip2: ip2,
-    hostname: ipinfoResult.hostname,
-    org: ipinfoResult.org
-    //ipinfoResult: ipinfoResult
-  })
+  try {
+    const visitor = await prisma.visitors.findUnique({
+      where: {
+        ip: ip2
+      }
+    })
+
+    if (visitor) {
+      await prisma.visitors.update({
+        where: {
+          ip: ip2
+        },
+        data: {
+          visits: visitor.visits + 1
+        }
+      })
+      return NextResponse.json(
+        {
+          message: 'New visitor updated!'
+        },
+        {
+          status: 200
+        }
+      )
+    } else {
+      await prisma.visitors.create({
+        data: {
+          ip: ip2,
+          hostname: ipinfoResult.hostname,
+          org: ipinfoResult.org
+        }
+      })
+      return NextResponse.json(
+        {
+          message: 'New visitor created!'
+        },
+        {
+          status: 200
+        }
+      )
+    }
+  } catch (e) {
+    console.log(e)
+    return NextResponse.json('Internal Server Error', { status: 500 })
+  }
 }
