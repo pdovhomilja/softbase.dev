@@ -13,8 +13,8 @@ export async function GET(request: Request) {
     headers[key] = value
   })
 
-  //const ip2 = request.headers.get('x-forwarded-for') as string
-  const ip2 = '145.224.105.165'
+  const ip2 = request.headers.get('x-forwarded-for') as string
+  //const ip2 = '145.224.105.165'
 
   const ipinfoResult = await ipinfoWrapper.lookupIp(ip2)
   //console.log(ipinfoResult, 'ipinfoResult')
