@@ -13,7 +13,7 @@ datasource db {
 model visitors {
   id        String   @id @default(uuid())
   ip        String   @unique
-  visits    Int      @default(0)
+  visits    Int      @default(1)
   org       String?
   hostname  String?
   country   String?

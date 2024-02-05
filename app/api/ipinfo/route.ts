@@ -14,10 +14,10 @@ export async function GET(request: Request) {
   })
 
   const ip2 = request.headers.get('x-forwarded-for') as string
-  //const ip2 = '145.224.105.165'
+  //const ip2 = '77.75.77.222'
 
   const ipinfoResult = await ipinfoWrapper.lookupIp(ip2)
-  //console.log(ipinfoResult, 'ipinfoResult')
+  console.log(ipinfoResult, 'ipinfoResult')
 
   try {
     const visitor = await prisma.visitors.findUnique({
