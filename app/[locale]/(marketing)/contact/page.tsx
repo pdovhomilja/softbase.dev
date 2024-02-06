@@ -22,7 +22,7 @@ const ContactPage = ({
   unstable_setRequestLocale(locale)
   const t = useTranslations('Contact')
   return (
-    <div className='h-full space-y-10 overflow-hidden'>
+    <div className='h-full w-full space-y-10 overflow-hidden'>
       <h1 className='scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl'>
         {t('title')}
       </h1>
