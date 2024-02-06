@@ -1,7 +1,7 @@
 {
   "Metadata": {
-    "title": "Jsme Softbase",
-    "description": "Děláme software tak jak nikdo jinej"
+    "title": "Softbase",
+    "description": "Jsme tým zkušených vývojářů, kteří se již mnoho let věnují vývoji softwaru. Máme zkušenosti s mnoha technologiemi a nebojíme se učit nové věci."
   },
   "NotFoundPage": {
     "title": "Stránka nenalezena",
@@ -20,8 +20,9 @@
     "locale": "{locale, select, cs {Czech} en {English} other {Unknown}}"
   },
   "Homepage": {
-    "title": "děláme software tak jak nikdo jinej.",
-    "button": "Více o nás"
+    "title": "Hledáte tým zkušených vývojářů?",
+    "button": "Více o nás",
+    "button-contact-us": "Kontaktujte nás"
   },
   "About": {
     "title": "O nás",

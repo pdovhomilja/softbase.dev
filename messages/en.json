@@ -1,7 +1,7 @@
 {
   "Metadata": {
     "title": "We are Softbase",
-    "description": "We are Softbase, we are making software development easy."
+    "description": "We are a team of experienced developers who have been dedicated to software development for many years. We have experience with many technologies and are not afraid to learn new things."
   },
   "NotFoundPage": {
     "title": "Stránka nenalezena",
@@ -20,8 +20,9 @@
     "locale": "{locale, select, cs { Czech} en { English} other {Unknown}}"
   },
   "Homepage": {
-    "title": " we are making software development easy.",
-    "button": "Learn more about us"
+    "title": "In search of a highly proficient team?",
+    "button": "Learn more about us",
+    "button-contact-us": "Contact us"
   },
   "About": {
     "title": "About us",

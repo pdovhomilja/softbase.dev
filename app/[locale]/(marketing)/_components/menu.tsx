@@ -8,11 +8,11 @@ const MenuComponent = () => {
   const t = useTranslations('Navigation')
 
   const routes = [
-    { name: t('home'), path: '/' },
-    { name: t('about'), path: '/about' },
-    { name: t('service'), path: '/service' },
-    { name: t('product'), path: '/product' },
-    { name: t('contact'), path: '/contact' }
+    { name: t('home'), path: '/', active: true },
+    { name: t('about'), path: '/about', active: false },
+    { name: t('service'), path: '/service', active: false },
+    { name: t('product'), path: '/product', active: false },
+    { name: t('contact'), path: '/contact', active: true }
   ]
 
   return (

@@ -29,7 +29,7 @@ const ContactPage = ({
       <blockquote className='mt-6 border-l-2 pl-6 italic'>
         {t('message')}
       </blockquote>
-      <div className='mx-auto flex w-full flex-wrap items-start justify-center gap-5 md:flex-row'>
+      <div className='mx-auto flex  h-full w-full flex-wrap items-start justify-center gap-5 overflow-y-auto md:flex-row'>
         <div className='mx-auto h-full w-full min-w-[400px] space-y-10 md:w-1/3'>
           <Card className='w-full'>
             <CardTitle className='px-5 py-10'>{t('contactTitle')}</CardTitle>
@@ -96,7 +96,7 @@ const ContactPage = ({
             </CardContent>
           </Card>
         </div>
-        <div className='md:2/3 mx-auto w-full min-w-[400px] max-w-[750px]'>
+        <div className='md:2/3 mx-auto h-full w-full min-w-[400px] max-w-[750px]'>
           <Card>
             <CardTitle className='px-5 py-10'>
               {t('contactForm.formTitle')}

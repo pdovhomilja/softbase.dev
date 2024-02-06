@@ -25,9 +25,14 @@ export default function Home({
         {t('title')}
       </h2>
       <div className='py-10'>
-        <Button asChild>
+        {/*         <Button asChild>
           <Link href={'/about'} aria-label='More about us'>
             {t('button')}
+          </Link>
+        </Button> */}
+        <Button asChild>
+          <Link href={'/contact'} aria-label='Contact us'>
+            {t('button-contact-us')}
           </Link>
         </Button>
       </div>

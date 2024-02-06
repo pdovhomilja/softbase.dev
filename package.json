@@ -24,6 +24,7 @@
     "classnames": "^2.5.1",
     "clsx": "^2.1.0",
     "contentlayer": "^0.3.4",
+    "cookie": "^0.6.0",
     "embla-carousel-react": "8.0.0-rc21",
     "framer-motion": "^11.0.3",
     "lucide-react": "^0.316.0",
@@ -49,6 +50,7 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
+    "@types/cookie": "^0.6.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

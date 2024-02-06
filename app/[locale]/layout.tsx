@@ -37,16 +37,16 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale}>
-      <body className={inter.className}>
+      <body className={inter.className + 'h-screen overflow-hidden'}>
         <ThemeProvider
           attribute='class'
           defaultTheme='system'
           enableSystem
           disableTransitionOnChange
         >
-          <div className='flex h-screen flex-col'>
+          <div className='flex h-screen flex-col overflow-hidden'>
             <Header />
-            <main className='mx-auto h-full w-full flex-grow overflow-hidden px-5 md:w-2/3 md:px-0'>
+            <main className='mx-auto h-full w-full flex-grow overflow-y-scroll px-5 md:w-2/3 md:px-0'>
               {children}
             </main>
             <Footer />

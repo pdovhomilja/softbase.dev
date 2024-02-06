@@ -25,7 +25,7 @@ const ThankYouPage = ({
         {t('description')}
       </h2>
       <p className='text-xl text-muted-foreground'>{t('message')}</p>
-      <div className='flex flex-wrap gap-2'>
+      <div className='flex flex-wrap items-center justify-center gap-2'>
         <SocialMediaLink
           IconComponent={FaSquareXTwitter}
           text='@NextCRMapp'
