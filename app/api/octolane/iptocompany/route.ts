@@ -1,6 +1,7 @@
 import { prisma } from '@/lib/prisma'
 import axios from 'axios'
 import { NextResponse } from 'next/server'
+import { env } from 'process'
 
 export async function GET(request: Request) {
   const url = process.env.OCTL_API_URL! + 'ip-to-company'
@@ -10,10 +11,15 @@ export async function GET(request: Request) {
     'x-api-key': process.env.OCTL_TOKEN!
   }
 
-  //const ip = request.headers.get('x-forwarded-for') as string
-  const ip = '145.224.105.187'
-  //  const ip = urlParams.get('ip')
-  //console.log(ip, 'ip')
+  let ip: string | undefined = request.headers.get('x-forwarded-for') as string
+
+  ip = request.headers.get('x-forwarded-for') as string
+
+  if (process.env.NODE_ENV === 'development') {
+    ip = '145.224.105.187'
+  }
+
+  console.log(ip, 'ip')
 
   try {
     const AxiosResponse = await axios.get(url + '?ip=' + ip, { headers })
@@ -30,7 +36,7 @@ export async function GET(request: Request) {
       )
     }
     try {
-      console.log(ip, 'ip')
+      //console.log(ip, 'ip')
       const updateResponse = await prisma.visitors.update({
         where: { ip: ip },
         data: {
@@ -48,7 +54,7 @@ export async function GET(request: Request) {
         }
       })
 
-      console.log(updateResponse, 'updateResponse')
+      //console.log(updateResponse, 'updateResponse')
 
       return NextResponse.json(
         { message: 'success', response: updateResponse },
