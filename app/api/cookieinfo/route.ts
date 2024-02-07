@@ -18,4 +18,11 @@ export async function GET(request: Request) {
       }
     }
   ) */
+  return NextResponse.json(
+    { message: 'error', response: 'No data' },
+    {
+      status: 200,
+      headers: { 'content-type': 'application/json' }
+    }
+  )
 }
