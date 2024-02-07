@@ -22,7 +22,7 @@ const ContactPage = ({
   unstable_setRequestLocale(locale)
   const t = useTranslations('Contact')
   return (
-    <div className='h-full w-full space-y-10 overflow-hidden'>
+    <div className='flex h-full w-full flex-col space-y-10 overflow-hidden'>
       <h1 className='scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl'>
         {t('title')}
       </h1>
@@ -30,7 +30,7 @@ const ContactPage = ({
         {t('message')}
       </blockquote>
       <div className='mx-auto flex  h-full w-full flex-wrap items-start justify-center gap-5 overflow-y-auto md:flex-row'>
-        <div className='mx-auto h-full w-full min-w-[400px] space-y-10 md:w-1/3'>
+        <div className='mx-auto w-full min-w-[400px] space-y-10 md:w-1/3'>
           <Card className='w-full'>
             <CardTitle className='px-5 py-10'>{t('contactTitle')}</CardTitle>
             <CardContent>
@@ -96,7 +96,7 @@ const ContactPage = ({
             </CardContent>
           </Card>
         </div>
-        <div className='md:2/3 mx-auto h-full w-full min-w-[400px] max-w-[750px]'>
+        <div className='md:2/3 mx-auto w-full min-w-[400px] max-w-[750px] pb-10'>
           <Card>
             <CardTitle className='px-5 py-10'>
               {t('contactForm.formTitle')}
