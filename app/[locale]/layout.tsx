@@ -1,8 +1,11 @@
+import { getTranslations, unstable_setRequestLocale } from 'next-intl/server'
+
+import { locales } from '@/navigation'
 import { Toaster } from '@/components/ui/sonner'
 import { ThemeProvider } from '@/components/theme-provider'
-import { getTranslations, unstable_setRequestLocale } from 'next-intl/server'
-import { locales } from '@/navigation'
+
 import { Inter } from 'next/font/google'
+
 import Footer from './(marketing)/_components/footer'
 import Header from './(marketing)/_components/header'
 
