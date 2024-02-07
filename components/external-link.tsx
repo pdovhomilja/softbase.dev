@@ -11,6 +11,7 @@ export default function ExternalLink({ description, href, title }: Props) {
       href={href}
       rel='noreferrer'
       target='_blank'
+      aria-label={title}
     >
       <p className='text-xl font-semibold text-white'>
         {title} <span className='ml-2 inline-block'>→</span>
