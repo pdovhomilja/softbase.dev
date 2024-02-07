@@ -1,4 +1,5 @@
 'use client'
+import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import React from 'react'
@@ -16,17 +17,8 @@ const MenuClient = ({
       {routes
         .map(route => {
           return (
-            <Link
-              key={route.path}
-              className={
-                'text-md text-gray-400 hover:text-gray-700 hover:underline ' +
-                (pathName === route.path.split('/')[1]
-                  ? 'font-bold underline'
-                  : '')
-              }
-              href={route.path}
-            >
-              {route.name}
+            <Link key={route.path} href={route.path}>
+              <Button variant={'outline'}>{route.name}</Button>
             </Link>
           )
         })
