@@ -11,15 +11,18 @@ export async function GET(request: Request) {
     'x-api-key': process.env.OCTL_TOKEN!
   }
 
-  let ip: string | undefined = request.headers.get('x-forwarded-for') as string
+  const urlParse = new URL(request.url)
+  const urlParams = new URLSearchParams(urlParse.search)
 
-  ip = request.headers.get('x-forwarded-for') as string
+  let ip: string | undefined
+
+  ip = urlParams.get('ip') as string
 
   if (process.env.NODE_ENV === 'development') {
     ip = '145.224.105.187'
   }
 
-  console.log(ip, 'ip')
+  console.log(ip, 'ip from urlParams - IP to Company')
 
   try {
     const AxiosResponse = await axios.get(url + '?ip=' + ip, { headers })

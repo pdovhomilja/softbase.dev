@@ -62,7 +62,7 @@ export async function GET(request: Request) {
       })
 
       await axios.get(
-        `${process.env.NEXT_PUBLIC_APP_URL}/api/octolane/iptocompany`
+        `${process.env.NEXT_PUBLIC_APP_URL}/api/octolane/iptocompany?ip=${ip2}`
       )
 
       return NextResponse.json(
