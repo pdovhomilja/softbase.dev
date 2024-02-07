@@ -11,22 +11,56 @@ datasource db {
 }
 
 model visitors {
-  id        String   @id @default(uuid())
-  ip        String   @unique
-  visits    Int      @default(1)
-  org       String?
-  hostname  String?
-  country   String?
-  region    String?
-  city      String?
-  latitude  Float?
-  longitude Float?
-  timezone  String?
-  country_code String?
-  postal String?
-  continent String?
-  is_eu Boolean?
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id                       String          @id @default(uuid())
+  ip                       String          @unique
+  visits                   Int             @default(1)
+  domain                   String?
+  company_name             String?
+  industry                 String?
+  founded_at               String?
+  primary_location         String?
+  linkedin_url             String?
+  twitter_url              String?
+  twitter_followers        Int?
+  estimated_annual_revenue String?
+  employee_size_range      String?
+  tags                     String[]        @default([])
+  org                      String?
+  hostname                 String?
+  country                  String?
+  region                   String?
+  city                     String?
+  latitude                 Float?
+  longitude                Float?
+  timezone                 String?
+  country_code             String?
+  postal                   String?
+  continent                String?
+  is_eu                    Boolean?
+  createdAt                DateTime        @default(now())
+  updatedAt                DateTime        @updatedAt
+  status                   visitors_status @default(ACTIVE)
 }
 
+enum visitors_status {
+  NEW
+  ACTIVE
+  INACTIVE
+}
+
+model visitors_people_by_mail {
+  id                     String   @id @default(uuid())
+  full_name              String?
+  first_name             String?
+  last_name              String?
+  linkedin_url           String?
+  email                  String   @unique
+  email_verified         Boolean?
+  contact_number         String?
+  job_title              String?
+  seniority              String?
+  current_company        String?
+  current_company_domain String?
+  createdAt              DateTime @default(now())
+  updatedAt              DateTime @updatedAt
+}

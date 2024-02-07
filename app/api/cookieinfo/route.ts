@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server'
 import { parse } from 'cookie'
 
 export async function GET(request: Request) {
-  //return user cookie info
+  /*   //return user cookie info
   const cookie = request.headers.get('cookie')
 
   const parsedCookie = parse(cookie || '')
@@ -17,5 +17,5 @@ export async function GET(request: Request) {
         'content-type': 'application/json'
       }
     }
-  )
+  ) */
 }

@@ -1,4 +1,5 @@
 import { prisma } from '@/lib/prisma'
+import axios from 'axios'
 import { NextResponse } from 'next/server'
 import IPinfoWrapper, { IPinfo, AsnResponse } from 'node-ipinfo'
 
@@ -59,6 +60,11 @@ export async function GET(request: Request) {
           is_eu: ipinfoResult.isEU
         }
       })
+
+      await axios.get(
+        `${process.env.NEXT_PUBLIC_APP_URL}/api/octolane/iptocompany`
+      )
+
       return NextResponse.json(
         {
           message: 'New visitor created!'
