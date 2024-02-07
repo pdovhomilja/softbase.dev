@@ -10,14 +10,15 @@ export async function GET(request: Request) {
     'x-api-key': process.env.OCTL_TOKEN!
   }
 
-  const ip = request.headers.get('x-forwarded-for') as string
-  //const ip = '77.75.77.222'
+  //const ip = request.headers.get('x-forwarded-for') as string
+  const ip = '145.224.105.187'
   //  const ip = urlParams.get('ip')
   //console.log(ip, 'ip')
 
   try {
-    const response = await axios.get(url + '?ip=' + ip, { headers })
-    console.log(response.data)
+    const AxiosResponse = await axios.get(url + '?ip=' + ip, { headers })
+
+    const response = AxiosResponse.data
 
     if (!response) {
       return NextResponse.json(
@@ -29,6 +30,7 @@ export async function GET(request: Request) {
       )
     }
     try {
+      console.log(ip, 'ip')
       const updateResponse = await prisma.visitors.update({
         where: { ip: ip },
         data: {
@@ -45,6 +47,8 @@ export async function GET(request: Request) {
           tags: response.data.tags
         }
       })
+
+      console.log(updateResponse, 'updateResponse')
 
       return NextResponse.json(
         { message: 'success', response: updateResponse },

@@ -17,7 +17,7 @@ model visitors {
   domain                   String?
   company_name             String?
   industry                 String?
-  founded_at               String?
+  founded_at               Int?
   primary_location         String?
   linkedin_url             String?
   twitter_url              String?
