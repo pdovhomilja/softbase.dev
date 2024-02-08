@@ -91,7 +91,11 @@ const ContactPage = ({
               <div className='flex items-center justify-center gap-2'>
                 <Calendar className='h-6 w-6 text-gray-500' />
                 <span> cal.com/Softbase</span>
-                <Button>{t('contactMeeting.buttonLabel')}</Button>
+                <Button asChild>
+                  <Link href={'https://cal.com/Softbase'}>
+                    {t('contactMeeting.buttonLabel')}
+                  </Link>
+                </Button>
               </div>
             </CardContent>
           </Card>
