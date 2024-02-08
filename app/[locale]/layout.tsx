@@ -7,9 +7,6 @@ import { ThemeProvider } from '@/components/theme-provider'
 
 import { Inter } from 'next/font/google'
 
-import Footer from './(marketing)/_components/footer'
-import Header from './(marketing)/_components/header'
-
 const inter = Inter({ subsets: ['latin'] })
 
 export function generateStaticParams() {
@@ -30,15 +27,14 @@ export async function generateMetadata({
   }
 }
 
-export default async function LocaleLayout({
+const RootLayout = ({
   children,
   params: { locale }
 }: {
   children: React.ReactNode
   params: { locale: string }
-}) {
+}) => {
   unstable_setRequestLocale(locale)
-
   return (
     <html lang={locale}>
       <head>
@@ -49,12 +45,12 @@ export default async function LocaleLayout({
 
         <Script strategy='afterInteractive' id='google'>
           {`
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','${process.env.NEXT_PUBLIC_GTM_ID}')
-  `}
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','${process.env.NEXT_PUBLIC_GTM_ID}')
+`}
         </Script>
       </head>
       <body className={inter.className + 'h-screen overflow-hidden'}>
@@ -72,16 +68,12 @@ export default async function LocaleLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className='flex h-screen flex-col overflow-hidden'>
-            <Header />
-            <main className='mx-auto h-full w-full flex-grow overflow-y-scroll px-5 md:w-2/3 md:px-0'>
-              {children}
-            </main>
-            <Footer />
-          </div>
+          {children}
           <Toaster />
         </ThemeProvider>
       </body>
     </html>
   )
 }
+
+export default RootLayout

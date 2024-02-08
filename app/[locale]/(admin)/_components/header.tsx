@@ -1,11 +1,11 @@
 import React from 'react'
-import { LogoHeader as Logo } from './logo'
-import { ThemeToggle } from '@/components/theme-toggle'
-import LocaleToggle from '../../_components/locale-toggle'
-import MenuComponent from './menu'
-import AvatarComponent from '../../(admin)/_components/avatar'
+
 import { cookies } from 'next/headers'
 import { createClient } from '@/utils/supabase/server'
+import { LogoHeader } from '../../(marketing)/_components/logo'
+import LocaleToggle from '../../_components/locale-toggle'
+import { ThemeToggle } from '@/components/theme-toggle'
+import AvatarComponent from './avatar'
 
 const Header = async () => {
   const cookieStore = cookies()
@@ -15,9 +15,8 @@ const Header = async () => {
 
   return (
     <header className='flex h-32 items-center justify-between px-10'>
-      <Logo />
+      <LogoHeader />
       <div className='flex items-center gap-5'>
-        <MenuComponent />
         <LocaleToggle />
         <ThemeToggle />
         {data.user && (

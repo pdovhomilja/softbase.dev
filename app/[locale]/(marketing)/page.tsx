@@ -3,7 +3,7 @@ import { useTranslations } from 'next-intl'
 import { unstable_setRequestLocale } from 'next-intl/server'
 
 import { Button } from '@/components/ui/button'
-import { LogoHomePage } from './(marketing)/_components/logo'
+import { LogoHomePage } from './_components/logo'
 
 export default function Home({
   params: { locale }
