@@ -5,10 +5,6 @@ import { locales } from '@/navigation'
 import { Toaster } from '@/components/ui/sonner'
 import { ThemeProvider } from '@/components/theme-provider'
 
-import { Inter } from 'next/font/google'
-
-const inter = Inter({ subsets: ['latin'] })
-
 export function generateStaticParams() {
   return locales.map(locale => ({ locale }))
 }
@@ -53,7 +49,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 `}
         </Script>
       </head>
-      <body className={inter.className + 'h-screen overflow-hidden'}>
+      <body className={'h-screen overflow-hidden'}>
         <noscript>
           <iframe
             src={`https://www.googletagmanager.com/ns.html?id=${process.env.NEXT_PUBLIC_GTM_ID}`}
