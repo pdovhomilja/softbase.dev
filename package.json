@@ -30,6 +30,7 @@
     "cookie": "^0.6.0",
     "embla-carousel-react": "8.0.0-rc21",
     "framer-motion": "^11.0.3",
+    "geist": "^1.2.2",
     "lucide-react": "^0.316.0",
     "next": "14.1.0",
     "next-contentlayer": "^0.3.4",

@@ -1,4 +1,6 @@
 import Script from 'next/script'
+import { GeistSans } from 'geist/font/sans'
+import { GeistMono } from 'geist/font/mono'
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server'
 
 import { locales } from '@/navigation'
@@ -32,7 +34,7 @@ const RootLayout = ({
 }) => {
   unstable_setRequestLocale(locale)
   return (
-    <html lang={locale}>
+    <html lang={locale} className={GeistSans.className}>
       <head>
         <Script
           strategy='afterInteractive'
