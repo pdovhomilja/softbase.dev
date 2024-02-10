@@ -15,6 +15,7 @@ export async function GET(request: Request) {
   })
 
   const ip2 = request.headers.get('x-forwarded-for') as string
+  const referrer = request.headers.get('referer') as string
   //const ip2 = '77.75.77.222'
 
   const ipinfoResult = await ipinfoWrapper.lookupIp(ip2)
@@ -47,6 +48,7 @@ export async function GET(request: Request) {
     } else {
       await prisma.visitors.create({
         data: {
+          referrer: referrer,
           ip: ip2,
           hostname: ipinfoResult.hostname,
           city: ipinfoResult.city,

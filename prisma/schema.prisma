@@ -14,6 +14,7 @@ model visitors {
   id                       String          @id @default(uuid())
   ip                       String          @unique
   visits                   Int             @default(1)
+  referrer                 String?
   domain                   String?
   company_name             String?
   industry                 String?
