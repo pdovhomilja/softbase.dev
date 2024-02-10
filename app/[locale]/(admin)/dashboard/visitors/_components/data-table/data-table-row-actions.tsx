@@ -20,6 +20,7 @@ import {
 
 import { labels } from '../data/data'
 import { visitorsSchema } from '../data/schema'
+import Link from 'next/link'
 
 interface DataTableRowActionsProps<TData> {
   row: Row<TData>
@@ -42,7 +43,9 @@ export function DataTableRowActions<TData>({
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align='end' className='w-[160px]'>
-        <DropdownMenuItem>Edit</DropdownMenuItem>
+        <Link href={`/dashboard/visitors/${visitor.id}`}>
+          <DropdownMenuItem>Detail</DropdownMenuItem>
+        </Link>
         <DropdownMenuItem>Make a copy</DropdownMenuItem>
         <DropdownMenuItem>Favorite</DropdownMenuItem>
         <DropdownMenuSeparator />

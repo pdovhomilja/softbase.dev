@@ -1,5 +1,3 @@
-import { Button } from '@/components/ui/button'
-import { login, signup } from './actions'
 import {
   Card,
   CardContent,
@@ -13,7 +11,7 @@ import LoginWithGoogle from '../_components/login-with-google'
 export default function LoginPage() {
   return (
     <div className='flex h-full w-full items-center justify-center'>
-      <Card className='min-w-[500px] max-w-lg'>
+      <Card className='min-w-[350px] max-w-lg'>
         <CardTitle className='p-5'>Login</CardTitle>
         <CardDescription className='p-5'>
           Log in or sign up to access your account

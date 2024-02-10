@@ -1,5 +1,5 @@
 import { prisma } from '@/lib/prisma'
-import React from 'react'
+import React, { Suspense } from 'react'
 import { DataTable } from './_components/data-table/data-table'
 import { columns } from './_components/data-table/columns'
 import {
@@ -8,6 +8,7 @@ import {
   CardDescription,
   CardTitle
 } from '@/components/ui/card'
+import VisitorSkeleton from './_components/skeleton/visitors-skeleton'
 
 const Visitors = async () => {
   //TODO: Type data
