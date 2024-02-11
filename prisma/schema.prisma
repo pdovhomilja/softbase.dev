@@ -65,3 +65,21 @@ model visitors_people_by_mail {
   createdAt              DateTime @default(now())
   updatedAt              DateTime @updatedAt
 }
+
+model visitors_people_by_domain {
+  id                     String   @id @default(uuid())
+  company_domain         String
+  full_name              String?  @unique
+  first_name             String?
+  last_name              String?
+  linkedin_url           String?
+  email                  String?  @unique
+  email_verified         Boolean?
+  contact_number         String?
+  job_title              String?
+  seniority              String?
+  current_company        String?
+  current_company_domain String?
+  createdAt              DateTime @default(now())
+  updatedAt              DateTime @updatedAt
+}

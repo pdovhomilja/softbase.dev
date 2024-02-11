@@ -9,7 +9,7 @@ const MenuComponent = () => {
 
   const routes = [
     { name: t('dashboard'), path: '/dashboard', active: true },
-    { name: t('visitors'), path: '/dashboard/visitors', active: true }
+    { name: t('leads'), path: '/dashboard/leads', active: true }
   ]
 
   return (

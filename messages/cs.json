@@ -17,7 +17,8 @@
   },
   "NavigationAdmin": {
     "dashboard": "Dashboard",
-    "visitors": "Visitors"
+    "visitors": "Návštěvníci",
+    "leads": "Leady"
   },
   "LocaleSwitcher": {
     "label": "Change language",

@@ -1,8 +1,19 @@
 import { prisma } from '@/lib/prisma'
 
-export async function getVisitorsCount() {
-  const count = await prisma.visitors.count()
-  return count
+export async function getVisitorsCount(withData?: boolean) {
+  if (withData) {
+    const visitors = await prisma.visitors.count({
+      where: {
+        company_name: {
+          not: null
+        }
+      }
+    })
+    return visitors
+  } else {
+    const count = await prisma.visitors.count()
+    return count
+  }
 }
 
 export async function getVisitorsCountByMonth() {

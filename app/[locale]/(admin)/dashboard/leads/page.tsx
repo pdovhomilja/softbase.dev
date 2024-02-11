@@ -21,9 +21,9 @@ const Visitors = async () => {
   })
   return (
     <Card>
-      <CardTitle className='p-5'>Visitors</CardTitle>
+      <CardTitle className='p-5'>Leads</CardTitle>
       <CardDescription className='p-5'>
-        Visitors to your website
+        Leads are the visitors where AI found a company name.
       </CardDescription>
       <CardContent>
         <DataTable data={data} columns={columns} />

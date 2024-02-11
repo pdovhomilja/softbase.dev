@@ -5,10 +5,12 @@ import {
   getVisitorsCountByMonth
 } from '@/actions/dashboard/get-visitors-count'
 import Link from 'next/link'
-
+import { getContactsCount } from '@/actions/dashboard/get-contacts-count'
 
 export default async function AdminDashboardPage() {
   const visitorsCount = await getVisitorsCount()
+  const leads = await getVisitorsCount(true)
+  const contacts = await getContactsCount()
 
   return (
     <div>
@@ -21,9 +23,19 @@ export default async function AdminDashboardPage() {
 
       <div className='flex flex-wrap gap-2 py-5'>
         <DashboardItem
-          href='/dashboard/visitors'
-          title='Total Users'
+          title='Total visitors'
           content={visitorsCount}
+          IconComponent={User}
+        />
+        <DashboardItem
+          href='/dashboard/leads'
+          title='Founded leads'
+          content={leads}
+          IconComponent={User}
+        />
+        <DashboardItem
+          title='Founded Contacts'
+          content={contacts}
           IconComponent={User}
         />
       </div>

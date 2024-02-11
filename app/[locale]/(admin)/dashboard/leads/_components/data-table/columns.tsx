@@ -43,7 +43,7 @@ export const columns: ColumnDef<Visitor>[] = [
     ),
     cell: ({ row }) => (
       <div>
-        <Link href={`/dashboard/visitors/${row.original.id}`}>
+        <Link href={`/dashboard/leads/${row.original.id}`}>
           {row.getValue('company_name')}
         </Link>
       </div>

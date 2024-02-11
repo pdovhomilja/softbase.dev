@@ -3,7 +3,6 @@ import axios from 'axios'
 
 export async function GET(request: Request) {
   const url = process.env.OCTL_API_URL! + 'people'
-  console.log(url, 'url')
 
   const headers = {
     'Content-Type': 'application/json',
