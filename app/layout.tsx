@@ -1,3 +1,4 @@
+import { PHProvider } from '@/providers/posthog'
 import './globals.css'
 
 export default function RootLayout({
@@ -5,5 +6,5 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  return children
+  return <PHProvider>{children}</PHProvider>
 }

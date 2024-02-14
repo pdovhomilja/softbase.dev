@@ -45,6 +45,7 @@
     "next-intl": "^3.5.2",
     "next-themes": "^0.2.1",
     "node-ipinfo": "^3.5.1",
+    "posthog-js": "^1.105.8",
     "react": "^18",
     "react-dom": "^18",
     "react-email": "2.0.0",

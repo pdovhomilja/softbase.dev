@@ -11,9 +11,7 @@ export async function GET(request: Request) {
   }
 
   const body = {
-    domain: 'isfgroup.cz',
-    first_name: '',
-    last_name: ''
+    domain: 'isfgroup.cz'
   }
 
   try {
@@ -27,7 +25,7 @@ export async function GET(request: Request) {
       }
     )
   } catch (error: unknown) {
-    console.error(error)
+    //console.error(error)
     return NextResponse.json(
       { message: 'Something went wrong!' },
       {

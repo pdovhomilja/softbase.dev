@@ -50,8 +50,11 @@
     "title": "Naše služby"
   },
   "Product": {
-    "title": "Naše produkty"
+    "title": "Naše produkty",
+    "description": "Jsme tým zkušených vývojářů, kteří se již mnoho let věnují vývoji softwaru. Máme zkušenosti s mnoha technologiemi a nebojíme se učit nové věci.",
+    "detailButton": "Detail"
   },
+
   "Contact": {
     "title": "Kontaktujte nás",
     "message": "Pošlete nám zprávu, pojďme se pobavit o vašem projektu.",
