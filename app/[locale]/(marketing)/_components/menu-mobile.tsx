@@ -17,7 +17,7 @@ const MenuMobile = ({
     <div className='visible md:hidden'>
       <DropdownMenu>
         <DropdownMenuTrigger>
-          <Menu />
+          <Menu aria-label='Menu' />
         </DropdownMenuTrigger>
         <DropdownMenuContent align='end' className='mt-1'>
           {routes
