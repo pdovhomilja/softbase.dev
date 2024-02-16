@@ -59,7 +59,7 @@ const LoadingSkeleton = () => (
               <tr className='border-b transition-colors'>
                 <td className='[&amp;:has([role=checkbox])]:pr-0 p-4 align-middle'>
                   <div>
-                    <a>
+                    <a aria-label='skeleton'>
                       <Skeleton className='w-[160px] max-w-full' />
                     </a>
                   </div>
@@ -98,7 +98,7 @@ const LoadingSkeleton = () => (
               <tr className='border-b transition-colors'>
                 <td className='[&amp;:has([role=checkbox])]:pr-0 p-4 align-middle'>
                   <div>
-                    <a>
+                    <a aria-label='skeleton'>
                       <Skeleton className='w-[168px] max-w-full' />
                     </a>
                   </div>
@@ -137,7 +137,7 @@ const LoadingSkeleton = () => (
               <tr className='border-b transition-colors'>
                 <td className='[&amp;:has([role=checkbox])]:pr-0 p-4 align-middle'>
                   <div>
-                    <a>
+                    <a aria-label='skeleton'>
                       <Skeleton className='w-[96px] max-w-full' />
                     </a>
                   </div>
