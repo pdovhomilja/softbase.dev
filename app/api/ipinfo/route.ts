@@ -4,6 +4,16 @@ import { NextResponse } from 'next/server'
 import IPinfoWrapper, { IPinfo, AsnResponse } from 'node-ipinfo'
 
 export async function GET(request: Request) {
+  if (process.env.NODE_ENV === 'development') {
+    return NextResponse.json(
+      {
+        message: 'Development mode - nothing to track!'
+      },
+      {
+        status: 200
+      }
+    )
+  }
   const ipinfoWrapper = new IPinfoWrapper(process.env.IPINFO_TOKEN as string)
 
   // Create an empty object to store headers
