@@ -13,7 +13,7 @@ const UiUxPage = () => {
 
 export default UiUxPage
 
-export function GoogleGeminiEffectDemo() {
+function GoogleGeminiEffectDemo() {
   const ref = React.useRef(null)
   const { scrollYProgress } = useScroll({
     target: ref,
