@@ -43,7 +43,10 @@ export const columns: ColumnDef<Visitor>[] = [
     ),
     cell: ({ row }) => (
       <div>
-        <Link href={`/dashboard/leads/${row.original.id}`}>
+        <Link
+          href={`/dashboard/leads/${row.original.id}`}
+          aria-label={row.getValue('company_name')}
+        >
           {row.getValue('company_name')}
         </Link>
       </div>

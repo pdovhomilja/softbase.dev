@@ -21,6 +21,7 @@ import {
 import { labels } from '../data/data'
 import { visitorsSchema } from '../data/schema'
 import Link from 'next/link'
+import { unknown } from 'zod'
 
 interface DataTableRowActionsProps<TData> {
   row: Row<TData>
@@ -43,7 +44,10 @@ export function DataTableRowActions<TData>({
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align='end' className='w-[160px]'>
-        <Link href={`/dashboard/leads/${visitor.id}`}>
+        <Link
+          href={`/dashboard/leads/${visitor.id}`}
+          aria-label={visitor.company_name || 'unknown'}
+        >
           <DropdownMenuItem>Detail</DropdownMenuItem>
         </Link>
         <DropdownMenuItem>Make a copy</DropdownMenuItem>

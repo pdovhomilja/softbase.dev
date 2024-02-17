@@ -6,7 +6,11 @@ const Footer = () => {
   return (
     <footer className='flex h-20 items-center justify-between px-10 text-xs text-muted-foreground'>
       <div>
-        <Link href={'/login'} className='rounded-full border p-2 px-3'>
+        <Link
+          href={'/login'}
+          className='rounded-full border p-2 px-3'
+          aria-label='Administration section'
+        >
           A
         </Link>
         <Suspense fallback={<div></div>}>

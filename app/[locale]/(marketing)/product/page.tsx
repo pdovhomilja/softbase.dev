@@ -44,7 +44,9 @@ const ProductPage = ({
           NextCRM
         </h2>
         <Button>
-          <Link href={'/product/nextcrm'}> {t('detailButton')}</Link>
+          <Link href={'/product/nextcrm'} aria-label={t('detailButton')}>
+            {t('detailButton')}
+          </Link>
         </Button>
       </div>
       <div className='flex flex-wrap justify-center  '>

@@ -27,6 +27,7 @@ const MenuMobile = ({
                   key={route.path}
                   className='text-sm text-gray-400 hover:text-gray-700 hover:underline'
                   href={route.path}
+                  aria-label={route.name}
                 >
                   <DropdownMenuItem>{route.name}</DropdownMenuItem>
                 </Link>

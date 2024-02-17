@@ -10,7 +10,7 @@ export const LogoHeader = () => {
   const pathName = path.split('/')[2]
 
   return (
-    <Link href={'/'}>
+    <Link href={'/'} aria-label='Softbase logo'>
       {pathName !== undefined && (
         <Image src={logo} alt='Softbase logo' width={200} height={200} />
       )}

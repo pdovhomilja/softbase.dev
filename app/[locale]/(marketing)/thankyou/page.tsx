@@ -67,7 +67,7 @@ const SocialMediaLink: React.FC<SocialMediaLinkProps> = ({
   return (
     <div className='flex gap-2'>
       <IconComponent className='h-6 w-6' />
-      <Link href={href} target='_blank'>
+      <Link href={href} target='_blank' aria-label={text}>
         <code className='relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold'>
           {text}
         </code>

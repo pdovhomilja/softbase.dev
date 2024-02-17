@@ -92,7 +92,10 @@ const ContactPage = ({
                 <Calendar className='h-6 w-6 text-gray-500' />
                 <span> cal.com/Softbase</span>
                 <Button asChild>
-                  <Link href={'https://cal.com/Softbase'}>
+                  <Link
+                    href={'https://cal.com/Softbase'}
+                    aria-label={t('contactMeeting.buttonLabel')}
+                  >
                     {t('contactMeeting.buttonLabel')}
                   </Link>
                 </Button>

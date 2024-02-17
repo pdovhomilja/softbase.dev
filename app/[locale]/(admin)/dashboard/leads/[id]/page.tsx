@@ -142,7 +142,11 @@ const VisitorPage = async ({ params }: VisitorDetailPageProps) => {
               </div>
               <div className='flex gap-2 py-2'>
                 <span>Company website</span>
-                <Link href={`https://${data.domain}`} target={'_blank'}>
+                <Link
+                  href={`https://${data.domain}`}
+                  target={'_blank'}
+                  aria-label={data.domain || 'unknown'}
+                >
                   {data.domain}
                 </Link>
               </div>
@@ -182,6 +186,7 @@ const VisitorPage = async ({ params }: VisitorDetailPageProps) => {
                   href={`https://${data.domain}`}
                   className={badgeVariants({ variant: 'outline' })}
                   target={'_blank'}
+                  aria-label={data.domain || 'unknown'}
                 >
                   <Globe className='m-1 h-4 w-4' />
                 </Link>
@@ -190,6 +195,7 @@ const VisitorPage = async ({ params }: VisitorDetailPageProps) => {
                     href={`https://x.com/${data.twitter_url}`}
                     className={badgeVariants({ variant: 'outline' })}
                     target={'_blank'}
+                    aria-label={'X platform'}
                   >
                     <X className='m-1 h-4 w-4' />
                   </Link>
@@ -198,6 +204,7 @@ const VisitorPage = async ({ params }: VisitorDetailPageProps) => {
                   href={`https://linkedin.com/${data.linkedin_url}`}
                   className={badgeVariants({ variant: 'outline' })}
                   target={'_blank'}
+                  aria-label={'LinkedIn'}
                 >
                   <Linkedin className='m-1 h-4 w-4' />
                 </Link>

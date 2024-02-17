@@ -40,10 +40,14 @@ const AvatarComponent = ({ avatarImg }: { avatarImg: string }) => {
       </DropdownMenuTrigger>
       <DropdownMenuContent align={'end'} className='mt-2'>
         <DropdownMenuItem asChild>
-          <Link href={'/dashboard'}>Dashboard</Link>
+          <Link href={'/dashboard'} aria-label='Dashboard'>
+            Dashboard
+          </Link>
         </DropdownMenuItem>
         <DropdownMenuItem asChild>
-          <Link href={'/dashboard/profile'}>Profile</Link>
+          <Link href={'/dashboard/profile'} aria-label='User profile'>
+            Profile
+          </Link>
         </DropdownMenuItem>
         <DropdownMenuItem onClick={handleSetNewPassword}>
           Set password

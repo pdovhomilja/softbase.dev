@@ -79,7 +79,7 @@ const LeadForm = ({
           onChange={() => setIsAccepted(!isAccepted)}
         />
         <span>
-          <Link href='/terms/actual' target={'_blank'}>
+          <Link href='/terms/actual' target={'_blank'} aria-label={'terms'}>
             (terms)
           </Link>
         </span>

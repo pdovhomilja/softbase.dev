@@ -47,7 +47,9 @@ const AboutPage = ({ params: { locale } }: { params: { locale: string } }) => {
       </blockquote>
       <div>
         <Button asChild>
-          <Link href={'/contact'}>{t('contactButton')}</Link>
+          <Link href={'/contact'} aria-label={t('contactButton')}>
+            {t('contactButton')}
+          </Link>
         </Button>
       </div>
     </div>
