@@ -20,13 +20,13 @@ export const LogoHeader = () => {
 
 export const LogoHomePage = () => {
   return (
-    <div className='relative h-full w-full xl:w-[70vw] '>
+    <div className='relative flex h-full w-full items-center justify-center xl:w-[70vw] '>
       <Image
         src={logo}
         alt='Softbase logo'
-        fill
-        className='object-contain'
         placeholder='blur'
+        width={623}
+        height={177}
       />
     </div>
   )
