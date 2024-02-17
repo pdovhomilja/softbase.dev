@@ -4,7 +4,7 @@ import { useEffect } from 'react'
 const SessionInfo = () => {
   useEffect(() => {
     const fetchIpInfo = async () => {
-      const sessionData = sessionStorage.getItem('ipInfo')
+      const sessionData = await sessionStorage.getItem('ipInfo')
       if (!sessionData) {
         console.log('New session!')
         const response = await fetch('/api/ipinfo')
