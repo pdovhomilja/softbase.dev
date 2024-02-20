@@ -1,7 +1,7 @@
 import { prisma } from '@/lib/prisma'
 import axios from 'axios'
 import { NextResponse } from 'next/server'
-import IPinfoWrapper, { IPinfo, AsnResponse } from 'node-ipinfo'
+import IPinfoWrapper from 'node-ipinfo'
 
 export async function GET(request: Request) {
   if (process.env.NODE_ENV === 'development') {
@@ -58,6 +58,7 @@ export async function GET(request: Request) {
     } else {
       await prisma.visitors.create({
         data: {
+          host: process.env.NEXT_PUBLIC_APP_URL,
           referrer: referrer,
           ip: ip2,
           hostname: ipinfoResult.hostname,
