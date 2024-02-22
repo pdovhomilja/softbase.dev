@@ -9,14 +9,17 @@ import {
   CardTitle
 } from '@/components/ui/card'
 import VisitorSkeleton from './_components/skeleton/visitors-skeleton'
+import { visitors } from '@prisma/client'
 
 const Visitors = async () => {
-  //TODO: Type data
-  const data: any = await prisma.visitors.findMany({
+  const data: visitors[] = await prisma.visitors.findMany({
     where: {
       company_name: {
         not: null
       }
+    },
+    orderBy: {
+      createdAt: 'desc'
     }
   })
   return (

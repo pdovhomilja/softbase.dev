@@ -2,7 +2,7 @@
 import { prisma } from '@/lib/prisma'
 import axios from 'axios'
 
-export async function getDomainContacts(domain: string) {
+export async function getDomainContacts(domain: string, jobRoles: string) {
   const url = process.env.OCTL_API_URL! + 'people'
   //console.log(url, 'url')
   //console.log(domain, 'domain')
@@ -14,7 +14,7 @@ export async function getDomainContacts(domain: string) {
   //console.log(headers, 'headers')
 
   const body = {
-    job_roles: ['Founder'],
+    job_roles: [jobRoles],
     company_domain: domain
   }
 

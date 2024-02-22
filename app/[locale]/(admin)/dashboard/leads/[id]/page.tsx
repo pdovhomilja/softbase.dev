@@ -17,6 +17,16 @@ import Link from 'next/link'
 import React from 'react'
 import { getDomainContacts } from './actions'
 import { revalidatePath } from 'next/cache'
+import { SubmitButton } from './_components/submit-button'
+import { Form, FormField } from '@/components/ui/form'
+import { useForm } from 'react-hook-form'
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue
+} from '@/components/ui/select'
 
 interface VisitorDetailPageProps {
   params: {
@@ -43,9 +53,13 @@ const VisitorPage = async ({ params }: VisitorDetailPageProps) => {
     'use server'
     console.log('Server action called')
     const domain = formData.get('domain') as string
+    const jobRoles = formData.get('job_roles') as string
+    const seniority = formData.get('seniority') as string
     console.log(domain, 'domain')
+    console.log(jobRoles, 'jobRoles')
+    console.log(seniority, 'seniority')
     if (!domain) return null
-    await getDomainContacts(domain)
+    await getDomainContacts(domain, jobRoles)
     revalidatePath('/admin/dashboard/leads')
   }
 
@@ -221,9 +235,22 @@ const VisitorPage = async ({ params }: VisitorDetailPageProps) => {
         </CardFooter>
       </Card>
       <div className='mt-5'>
-        <form action={handleGetDomainContacts}>
+        <form action={handleGetDomainContacts} className='flex gap-2'>
           <input type='hidden' name='domain' value={data.domain!} />
-          <Button type='submit'>Get contacts</Button>
+
+          <Select name='job_roles'>
+            <SelectTrigger className='w-[180px]'>
+              <SelectValue placeholder='Choose role' />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value='CTO'>CTO</SelectItem>
+              <SelectItem value='Marketing'>Marketing</SelectItem>
+              <SelectItem value='Sales'>Sales</SelectItem>
+              <SelectItem value='Product'>Product</SelectItem>
+              <SelectItem value='Founder'>Founder</SelectItem>
+            </SelectContent>
+          </Select>
+          <SubmitButton value={'Get contacts'} />
         </form>
       </div>
       <Card className='mt-5'>
@@ -261,8 +288,19 @@ const VisitorPage = async ({ params }: VisitorDetailPageProps) => {
                     <p>{contact.contact_number}</p>
                   </div>
                   <div className='flex gap-2 py-2'>
-                    <span>LinkedIn:</span>
-                    <p>{contact.linkedin_url}</p>
+                    <div>Socials</div>
+                    <div>
+                      {contact.linkedin_url && (
+                        <Link
+                          href={contact.linkedin_url}
+                          className={badgeVariants({ variant: 'outline' })}
+                          target={'_blank'}
+                          aria-label={'LinkedIn'}
+                        >
+                          <Linkedin className='m-1 h-4 w-4' />
+                        </Link>
+                      )}
+                    </div>
                   </div>
                 </CardContent>
               </Card>
