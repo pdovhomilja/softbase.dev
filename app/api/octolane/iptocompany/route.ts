@@ -8,6 +8,7 @@ export async function GET(request: Request) {
   console.log(url, 'url')
 
   const headers = {
+    'Content-Type': 'application/json',
     'x-api-key': process.env.OCTL_TOKEN!
   }
 
@@ -16,7 +17,7 @@ export async function GET(request: Request) {
 
   let ip: string | undefined
 
-  ip = urlParams.get('ip') as string
+  ip = (await urlParams.get('ip')) as string
 
   if (process.env.NODE_ENV === 'development') {
     ip = '145.224.105.187'

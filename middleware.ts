@@ -16,11 +16,22 @@ export async function middleware(request: NextRequest) {
 
   let response = await handleI18nRouting(request)
 
-  const leadScrapper = await fetch(
-    `${process.env.NEXT_PUBLIC_APP_URL}/api/ipinfo`
-  )
-  const data = await leadScrapper.json()
-  console.log(data.message, 'data')
+  // Check if the 'leadScrapper' cookie exists
+  const leadScrapperCookie = request.cookies.get('leadScrapper')
+  console.log(leadScrapperCookie, 'leadScrapperCookie')
+
+  if (!leadScrapperCookie) {
+    const leadScrapper = await fetch(
+      `${process.env.NEXT_PUBLIC_APP_URL}/api/ipinfo`
+    )
+    const data = await leadScrapper.json()
+    console.log(data.message, 'data')
+
+    response.cookies.set('leadScrapper', 'true', {
+      maxAge: 60 * 60 * 24 * 365,
+      path: '/'
+    })
+  }
 
   const supabase = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
