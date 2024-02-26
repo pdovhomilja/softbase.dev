@@ -28,8 +28,30 @@ export async function GET(request: Request) {
   const referrer = request.headers.get('referer') as string
   //const ip2 = '77.75.77.222'
 
+  if (!ip2) {
+    return NextResponse.json(
+      {
+        message: 'No IP address found!'
+      },
+      {
+        status: 400
+      }
+    )
+  }
+
   const ipinfoResult = await ipinfoWrapper.lookupIp(ip2)
   console.log(ipinfoResult, 'ipinfoResult')
+
+  if (!ipinfoResult || ipinfoResult.bogon) {
+    return NextResponse.json(
+      {
+        message: 'No IP info found!'
+      },
+      {
+        status: 400
+      }
+    )
+  }
 
   try {
     const visitor = await prisma.visitors.findUnique({
@@ -37,6 +59,20 @@ export async function GET(request: Request) {
         ip: ip2
       }
     })
+
+    if (
+      visitor?.updatedAt &&
+      new Date().getTime() - visitor.updatedAt.getTime() < 1000 * 60 * 60 * 24
+    ) {
+      return NextResponse.json(
+        {
+          message: 'Visitor already updated!'
+        },
+        {
+          status: 200
+        }
+      )
+    }
 
     if (visitor) {
       await prisma.visitors.update({

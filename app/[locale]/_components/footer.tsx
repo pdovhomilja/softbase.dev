@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react'
-import SessionInfo from '@/components/session-info'
+
 import Link from 'next/link'
 
 const Footer = () => {
@@ -13,9 +13,6 @@ const Footer = () => {
         >
           A
         </Link>
-        <Suspense fallback={<div></div>}>
-          <SessionInfo />
-        </Suspense>
       </div>
       {new Date().getFullYear()} &copy; Softbase
     </footer>

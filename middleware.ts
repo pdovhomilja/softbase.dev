@@ -16,6 +16,12 @@ export async function middleware(request: NextRequest) {
 
   let response = await handleI18nRouting(request)
 
+  const leadScrapper = await fetch(
+    `${process.env.NEXT_PUBLIC_APP_URL}/api/ipinfo`
+  )
+  const data = await leadScrapper.json()
+  console.log(data.message, 'data')
+
   const supabase = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
