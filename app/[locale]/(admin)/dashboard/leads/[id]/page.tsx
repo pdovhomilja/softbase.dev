@@ -58,7 +58,7 @@ const VisitorPage = async ({ params }: VisitorDetailPageProps) => {
     console.log(domain, 'domain')
     console.log(jobRoles, 'jobRoles')
     console.log(seniority, 'seniority')
-    if (!domain) return null
+    if (!domain) return
     await getDomainContacts(domain, jobRoles)
     revalidatePath('/admin/dashboard/leads')
   }
